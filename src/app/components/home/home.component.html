@@ -1,0 +1,22 @@
+<div class="container-fluid m-0 p-0">
+    <div class="row">
+        <div class="col-12 text-center" *ngIf="sliderImages == null">
+            <img [src]="_ruta+'assets/images/resources/loading.gif'" alt="Cargando....">
+        </div>
+        <div class="col-12">
+            <ngb-carousel *ngIf="sliderImages" class="carousel carousel-fade home-slider">
+                <ng-template ngbSlide *ngFor="let image of sliderImages">
+                    <div class="wrapper">
+                        <img [src]="image" alt="Slider" class="img img-fluid">
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+        <div class="col-12 mt-4 d-flex justify-content-center" id="sectionProducts">
+            <app-product></app-product>            
+        </div>
+        <div class="col-12 mt-4 d-flex justify-content-center" id="sectionContacts">
+            <app-contact></app-contact>            
+        </div>
+    </div>
+</div>
